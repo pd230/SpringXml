@@ -3,7 +3,38 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Bean Definition -->
-    <bean name="Alien" class="springDemo.Alien">
+    
+    <!-- Scope example
+    <bean name="Alien" class="springDemo.Alien" scope="prototype">
+    </bean>-->
+    
+    
+    <!-- (Constructor injection) -->
+    <!--<bean name="Alien" class="springDemo.Alien" scope="prototype">
+           <constructor-arg value="12"></constructor-arg>
+    </bean> -->
+    
+    <!-- Property setting example(Setter injection)
+    <bean name="Alien" class="springDemo.Alien" scope="prototype">
+           <property name="age" value="20"></property>
+    </bean>-->
+    
+    <!-- ref setting example -->
+    <!--<bean name="Alien" class="springDemo.Alien">
+           <property name="laptop" ref="Laptop">
+           </property>
     </bean>
-
+    
+    <bean name="Laptop" class="springDemo.Laptop">
+    </bean>-->
+    
+    <!-- AutoWire example -->
+    <bean name="Alien" class="springDemo.Alien" autowire="byType">
+    </bean>
+    
+    <bean name="laptop" class="springDemo.Laptop" >
+    </bean>
+    <bean name="desktop" class="springDemo.Desktop" primary="true">
+    </bean>
+    
 </beans>
